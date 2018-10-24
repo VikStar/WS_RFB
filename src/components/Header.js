@@ -13,7 +13,7 @@ export default class Header extends Component {
                     Day
                 </h1>
                 <h3 className="tagline">
-                    <span>Frash Daily</span>
+                    <span>{this.props.tagline}</span>
                 </h3>
             </header>
         );
