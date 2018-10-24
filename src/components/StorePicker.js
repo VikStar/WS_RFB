@@ -8,6 +8,6 @@ export default class StorePicker extends Component {
                 <input type="text" required placeholder="Store Name" />
                 <button type="submit">Visit Store -></button>
             </form>
-        )
+        );
     }
 }
