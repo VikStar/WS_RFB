@@ -43,7 +43,7 @@ export default class App extends Component {
                             .map(key => <Fish key={key} index={key} details={this.state.fishes[key]} addToOrder={this.addToOrder} />)}
                     </ul>
                 </div>
-                <Order />
+                <Order fishes={this.state.fishes} order={this.state.order} />
                 <Inventory addFish={this.addFish} loadSampleFishes={this.loadSampleFishes} />
             </div>
         );
