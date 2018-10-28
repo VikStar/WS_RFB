@@ -4,12 +4,24 @@ import Order from './Order';
 import Inventory from './Inventory';
 import Fish from './Fish';
 import sampleFishes from '../sample-fishes';
+import base from '../base';
 
 export default class App extends Component {
     state = {
         fishes: {},
         order: {}
     };
+
+    componentDidMount() {
+        this.ref = base.syncState(`${this.props.match.params.storeId}/fishes`, {
+            context: this,
+            state: 'fishes'
+        });
+    }
+
+    componentWillUnmount() {
+        base.removeBinding(this.ref);
+    }
 
     addFish = (fish) => {
         // 1. Take a copy of the existing state
