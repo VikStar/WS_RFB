@@ -7,6 +7,8 @@ export default class Order extends Component {
         const count = this.props.order[key];
         const isAvailable = fish && fish.status === 'available';
 
+        if (!fish) return null;
+
         if (!isAvailable) {
             return <li key={key}>
                 Sorry, {fish ? fish.name : 'fish'} is no longer available

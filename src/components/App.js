@@ -13,7 +13,14 @@ export default class App extends Component {
     };
 
     componentDidMount() {
-        this.ref = base.syncState(`${this.props.match.params.storeId}/fishes`, {
+        const { params } = this.props.match;
+        const localStorageRef = localStorage.getItem(params.storeId);
+
+        if (localStorageRef) {
+            this.setState({ order: JSON.parse(localStorageRef) });
+        }
+        
+        this.ref = base.syncState(`${params.storeId}/fishes`, {
             context: this,
             state: 'fishes'
         });
@@ -21,6 +28,13 @@ export default class App extends Component {
 
     componentWillUnmount() {
         base.removeBinding(this.ref);
+    }
+
+    componentDidUpdate() {
+        localStorage.setItem(
+            this.props.match.params.storeId,
+            JSON.stringify(this.state.order)
+        );
     }
 
     addFish = (fish) => {
