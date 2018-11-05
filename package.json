@@ -2,6 +2,7 @@
   "name": "cotd",
   "version": "0.0.3",
   "private": true,
+  "homepage": "https://github.com/VikStar/WS_RFB",
   "devDependencies": {
     "concurrently": "3.5.1",
     "react-scripts": "^1.1.4"
