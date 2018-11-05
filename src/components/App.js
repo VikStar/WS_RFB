@@ -109,6 +109,7 @@ export default class App extends Component {
                 />
 
                 <Inventory
+                    storeId={this.props.match.params.storeId}
                     addFish={this.addFish}
                     loadSampleFishes={this.loadSampleFishes}
                     fishes={this.state.fishes}
