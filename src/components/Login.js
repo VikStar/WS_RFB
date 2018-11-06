@@ -13,6 +13,10 @@ const Login = (props) => (
         <button className='github' onClick={() => props.authenticate('Github')}>
             Log In With Github
         </button>
+
+        <button className='twitter' onClick={() => props.authenticate('Twitter')}>
+            Log In With Twitter
+        </button>
     </nav>
 );
 

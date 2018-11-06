@@ -28,7 +28,6 @@ export default class Inventory extends Component {
     }
 
     authHandler = async (authData) => {
-        // console.log(authData);
         // 1. Look up the current store and the database
         const store = await base.fetch(this.props.storeId, { context: this });
         // 2. Claim it if the is no owner
